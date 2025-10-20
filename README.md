@@ -10,17 +10,36 @@
 
 ```
 grudina_dz3/
+├── .github/
+│   └── workflows/
+│       ├── deploy-pages.yml
+│       └── lint.yml
 ├── docs/
-│ └── contribution.md
+│   └── contribution.md
 ├── content/
-│ ├── communication_plan.docx
-│ ├── communication_plan.md
-│ ├── communication_plan_signed.pdf
-│ ├── protocol_meeting.md
-│ ├── questionnaire.md
-│ └── signed_protocol_meeting.pdf
+│   ├── communication_plan.docx
+│   ├── communication_plan.md
+│   ├── communication_plan_signed.pdf
+│   ├── protocol_meeting.md
+│   ├── questionnaire.md
+│   └── signed_protocol_meeting.pdf
+├── .markdownlint.json
+├── .prettierrc
+├── mkdocs.yml
 └── README.md
 ```
+
+## Сайт документации
+
+Документация проекта развернута на GitHub Pages и доступна по [ссылке](https://mvdolbilkin.github.io/grudina_dz3/).
+
+## Описание конфигурационных файлов
+
+- **.github/workflows/deploy-pages.yml**: Рабочий процесс GitHub Actions для автоматического развертывания документации на GitHub Pages при коммитах в ветку `main`.
+- **.github/workflows/lint.yml**: Рабочий процесс GitHub Actions для автоматической проверки Markdown файлов на соответствие стилю.
+- **.markdownlint.json**: Конфигурационный файл для `markdownlint`, определяющий правила проверки стиля Markdown.
+- **.prettierrc**: Конфигурационный файл для `Prettier` для поддержания единого стиля кода.
+- **mkdocs.yml**: Конфигурационный файл для `MkDocs`, используемого для генерации сайта документации.
 
 ## Навигация
 

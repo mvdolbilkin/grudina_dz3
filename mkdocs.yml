@@ -3,6 +3,19 @@ site_description: Командная работа с Git и документац
 site_author: Команда проекта
 site_url: https://mvdolbilkin.github.io/grudina_dz3/
 
+# ВАЖНО: Указываем что файлы находятся в корне репозитория
+docs_dir: .
+
+# Исключаем служебные папки из сборки
+exclude_docs: |
+  .git/
+  .github/
+  site/
+  venv/
+  __pycache__/
+  *.pdf
+  *.docx
+
 theme:
   name: material
   language: ru
@@ -12,7 +25,7 @@ theme:
       accent: indigo
       toggle:
         icon: material/brightness-7
-        name: Темная тема
+        name: Тёмная тема
     - scheme: slate
       primary: indigo
       accent: indigo
@@ -24,12 +37,12 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - search.suggest
     - search.highlight
     - content.code.copy
 
+# Навигация - пути относительно корня
 nav:
   - Главная: README.md
   - Документация:

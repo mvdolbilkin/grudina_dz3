@@ -1,0 +1,59 @@
+site_name: Grudina DZ3 - Документация
+site_description: Командная работа с Git и документация процессов
+site_author: Команда проекта
+site_url: https://mvdolbilkin.github.io/grudina_dz3/
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Темная тема
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Светлая тема
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Главная: README.md
+  - Документация:
+      - Инструкция по работе: docs/contribution.md
+  - Материалы работы:
+      - Анкета: content/questionnaire.md
+      - План коммуникаций: content/communication_plan.md
+      - Протокол встречи: content/protocol_meeting.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: ru

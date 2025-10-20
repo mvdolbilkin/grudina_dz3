@@ -3,18 +3,7 @@ site_description: Командная работа с Git и документац
 site_author: Команда проекта
 site_url: https://mvdolbilkin.github.io/grudina_dz3/
 
-# ВАЖНО: Указываем что файлы находятся в корне репозитория
-docs_dir: .
-
-# Исключаем служебные папки из сборки
-exclude_docs: |
-  .git/
-  .github/
-  site/
-  venv/
-  __pycache__/
-  *.pdf
-  *.docx
+docs_dir: docs_build
 
 theme:
   name: material
@@ -42,11 +31,10 @@ theme:
     - search.highlight
     - content.code.copy
 
-# Навигация - пути относительно корня
 nav:
-  - Главная: README.md
+  - Главная: index.md
   - Документация:
-      - Инструкция по работе: docs/contribution.md
+      - Инструкция по работе: contribution.md
   - Материалы работы:
       - Анкета: content/questionnaire.md
       - План коммуникаций: content/communication_plan.md
@@ -59,9 +47,6 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.tabbed:
-      alternate_style: true
   - attr_list
   - md_in_html
   - toc:

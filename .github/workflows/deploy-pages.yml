@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -26,5 +28,24 @@ jobs:
       - name: Install MkDocs Material
         run: pip install mkdocs-material
 
-      - name: Build and deploy
-        run: mkdocs gh-deploy --force
+      - name: Prepare docs directory
+        run: |
+          # Создаём временную структуру docs/
+          mkdir -p docs_build
+          
+          # Копируем README.md как index.md
+          cp README.md docs_build/index.md
+          
+          # Копируем файлы из docs/
+          cp -r docs/* docs_build/
+          
+          # Копируем папку content целиком
+          cp -r content docs_build/content
+
+      - name: Build and deploy to gh-pages
+        run: |
+          # Временно меняем docs_dir в mkdocs.yml
+          sed -i 's/docs_dir: docs/docs_dir: docs_build/' mkdocs.yml
+          
+          # Деплоим
+          mkdocs gh-deploy --force
